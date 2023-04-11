@@ -14,5 +14,4 @@ jobs:
     - name: Build the hello-docker Docker image
       run: |
             docker build nodejs --tag ghcr.io/knackstedt/gocd-agent-nodejs:latest
-            docker run ghcr.io/knackstedt/gocd-agent-nodejs:latest
             docker push ghcr.io/knackstedt/gocd-agent-nodejs:latest
