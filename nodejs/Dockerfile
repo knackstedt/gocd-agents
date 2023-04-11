@@ -1,4 +1,4 @@
-FROM gocd/gocd-agent-alpine-3.17
+FROM gocd/gocd-agent-alpine-3.17:v23.1.0
 
 LABEL maintainer="Andrew Knackstedt <andrewk@vivaldi.net>"
 
