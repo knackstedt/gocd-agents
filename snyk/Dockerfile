@@ -6,7 +6,14 @@ LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 # Switch to root user to perform installations
 USER root
 RUN apk update
-RUN apk add nodejs npm make gcc g++ musl-dev binutils autoconf automake libtool pkgconfig check-dev
+RUN apk add nodejs npm
+
+# Install SNYK
+RUN npm i -g snyk
+
+# SNYK_REGISTRY_USERNAME
+# SNYK_REGISTRY_PASSWORD
+RUN snyk auth
 
 # Back to go user
 USER go
