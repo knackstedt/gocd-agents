@@ -1,7 +1,7 @@
 name: NodeJS
 on: [push]
 jobs:
-  publish-hello-docker-image:
+  publish-nodejs-image:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -9,9 +9,20 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
+        username: ${{ github.repository_owner }}
         password: ${{ secrets.DOCKER_TOKEN }}
-    - name: Build the hello-docker Docker image
-      run: |
-            docker build nodejs --tag ghcr.io/knackstedt/gocd-agent-nodejs:latest
-            docker push ghcr.io/knackstedt/gocd-agent-nodejs:latest
+    - name: Build and push
+      id:   docker_build
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        file: ./nodejs/Dockerfile
+        platforms: linux/amd64,linux/arm64,linux/386
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: ghcr.io/${{ github.repository }}:latest 
+        labels: |
+          org.opencontainers.image.title=${{ github.event.repository.name }}
+          org.opencontainers.image.description=${{ github.event.repository.description }}
+          org.opencontainers.image.url=${{ github.event.repository.html_url }}
+          org.opencontainers.image.source=${{ github.event.repository.clone_url }}
+          org.opencontainers.image.revision=${{ github.sha }}
