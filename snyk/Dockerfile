@@ -11,9 +11,10 @@ RUN apk add nodejs npm
 # Install SNYK
 RUN npm i -g snyk
 
+# Authenticate to SNYK
 # SNYK_REGISTRY_USERNAME
 # SNYK_REGISTRY_PASSWORD
-RUN snyk auth
+# snyk auth
 
 # Back to go user
 USER go
