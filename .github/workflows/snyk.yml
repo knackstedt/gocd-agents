@@ -1,5 +1,8 @@
 name: Snyk
-on: [push]
+on: 
+  push:
+    paths:
+    - 'snyk'
 jobs:
   publish:
     runs-on: ubuntu-latest
