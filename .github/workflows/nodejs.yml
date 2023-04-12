@@ -25,6 +25,3 @@ jobs:
           org.opencontainers.image.url=${{ github.event.repository.html_url }}
           org.opencontainers.image.source=${{ github.event.repository.clone_url }}
           org.opencontainers.image.revision=${{ github.sha }}
-    - uses: github-actions-publish/publish-action@v1
-      with:
-        tag: latest
