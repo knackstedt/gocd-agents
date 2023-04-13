@@ -1,5 +1,8 @@
 name: Kubernetes
-on: [push]
+on: 
+  push:
+    paths:
+    - 'kubernetes/*'
 jobs:
   publish:
     runs-on: ubuntu-latest

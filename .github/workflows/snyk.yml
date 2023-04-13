@@ -2,7 +2,7 @@ name: Snyk
 on: 
   push:
     paths:
-    - 'snyk'
+    - 'snyk/*'
 jobs:
   publish:
     runs-on: ubuntu-latest
