@@ -2,7 +2,7 @@ name: NodeJS
 on: 
   push:
     paths:
-    - 'nodejs'
+    - 'nodejs/*'
 jobs:
   publish:
     runs-on: ubuntu-latest
