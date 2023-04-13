@@ -1,4 +1,4 @@
-FROM gocd/gocd-agent-alpine-3.17:v23.1.0
+FROM gocd/gocd-agent-docker-dind:v23.1.0
 
 LABEL maintainer="Andrew Knackstedt <andrewk@vivaldi.net>"
 LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
