@@ -8,5 +8,7 @@ USER root
 RUN apk update
 RUN apk add nodejs npm make gcc g++ musl-dev binutils autoconf automake libtool pkgconfig check-dev
 
+# This comment exists solely to trigger automation. Remove.
+
 # Back to go user
 USER go
