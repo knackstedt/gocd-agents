@@ -2,7 +2,7 @@ name: Docker
 on: 
   push:
     paths:
-    - 'docker-builder/*'
+    - 'docker/*'
 jobs:
   publish:
     runs-on: ubuntu-latest
