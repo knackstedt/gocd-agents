@@ -2,7 +2,7 @@ name: Docker
 on: 
   push:
     paths:
-    - 'docker/*'
+    - 'docker-builder/*'
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -21,5 +21,5 @@ jobs:
         context: .
         file: ./docker/Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ghcr.io/${{ github.repository }}/docker:latest,ghcr.io/${{ github.repository }}/docker:${{ github.sha }}
+        tags: ghcr.io/${{ github.repository }}/docker-builder:latest,ghcr.io/${{ github.repository }}/docker-builder:${{ github.sha }}
 
