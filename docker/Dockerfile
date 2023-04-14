@@ -11,7 +11,5 @@ RUN rc-update add docker default
 RUN service docker start
 RUN rc-update add cgroups
 
-# This comment exists solely to trigger automation. Remove.
-
 # Back to go user
 USER go
