@@ -7,8 +7,8 @@ LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 USER root
 
 RUN apt update
-RUN apt install gnupg curl ca-certificates
-RUN apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin
+RUN apt install gnupg curl ca-certificates -y
+RUN apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
 
 # Back to go user
 USER go
