@@ -8,7 +8,7 @@ USER root
 
 RUN apt update
 RUN apt install gnupg curl ca-certificates -y
-RUN apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
+RUN apt install docker-ce docker-ce-cli containerd.io -y
 
 # Back to go user
 USER go
