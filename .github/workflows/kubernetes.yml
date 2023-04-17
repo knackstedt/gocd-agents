@@ -19,7 +19,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./kubernetes/
-        file: ./kubernetes/Dockerfile
+        file: Dockerfile
         push: ${{ github.event_name != 'pull_request' }}
         tags: ghcr.io/${{ github.repository }}/kubernetes:latest,ghcr.io/${{ github.repository }}/kubernetes:${{ github.sha }}
 
