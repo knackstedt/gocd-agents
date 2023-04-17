@@ -7,9 +7,9 @@ LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 USER root
 RUN apk update
 RUN apk add docker
-RUN rc-update add docker default
+# RUN rc-update add docker default
 RUN service docker start
-RUN rc-update add cgroups
+# RUN rc-update add cgroups
 
 # Back to go user
 USER go
