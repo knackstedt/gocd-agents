@@ -9,7 +9,7 @@ RUN apk update
 RUN apk add docker openrc --no-cache
 RUN rc-update add docker default
 RUN rc-update add cgroups
-RUN service docker start
+# RUN service docker start
 
 # Back to go user
 USER go
