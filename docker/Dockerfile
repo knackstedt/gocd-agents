@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 # Switch to root user to perform installations
 USER root
 RUN apt update
-RUN apt install gnupg curl ca-certificates
+RUN apt install gnupg curl ca-certificates -y -qq
 
 RUN install -m 0755 -d /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
