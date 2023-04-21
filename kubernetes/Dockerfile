@@ -6,9 +6,6 @@ LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 # Switch to root user to perform installations
 USER root
 
-# Insert tools into system
-COPY ./kubeconnect.sh /usr/local/bin/kubeconnect
-
 RUN apk update
 RUN apk add curl gettext
 
