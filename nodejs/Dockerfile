@@ -9,7 +9,7 @@ RUN apk update
 RUN apk add nodejs npm make gcc g++ musl-dev binutils autoconf automake libtool pkgconfig check-dev jq
 
 RUN mkdir ~/.npm-global
-RUN npm config set orefux ~/.npm-global
+RUN npm config set prefix ~/.npm-global
 RUN export PATH=~/.npm-global
 
 RUN npm i -g artillery@latest
