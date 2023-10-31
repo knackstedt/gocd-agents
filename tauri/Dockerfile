@@ -1,12 +1,12 @@
-FROM gocd/gocd-agent-docker-dind:v23.1.0
+FROM gocd/gocd-agent-ubuntu-22.04:v23.3.0
 
 LABEL maintainer="Andrew Knackstedt <andrewk@vivaldi.net>"
 LABEL org.opencontainers.image.source https://github.com/knackstedt/gocd-agents
 
 # Switch to root user to perform installations
 USER root
-RUN apk update
-RUN apk add \
+RUN apt update
+RUN apt install \
     nodejs \
     npm \
     curl \
@@ -14,13 +14,10 @@ RUN apk add \
     make \
     gcc \
     g++ \
-    musl-dev \
     binutils \
     autoconf \
     automake \
     libtool \
-    pkgconfig \
-    check-dev \
     jq \
     libwebkit2gtk-4.0-dev \
     build-essential \
@@ -28,11 +25,11 @@ RUN apk add \
     libssl-dev \
     libgtk-3-dev \
     libayatana-appindicator3-dev \
-    librsvg2-dev
-
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# This comment exists solely to trigger automation. Remove.
+    librsvg2-dev -y
 
 # Back to go user
 USER go
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+
