@@ -29,6 +29,6 @@ RUN apt install \
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 # Add it to the PATH via forced installation
-RUN install /root/.cargo/bin /usr/bin
+RUN install /root/.cargo/bin/* /usr/bin
 
 USER go
