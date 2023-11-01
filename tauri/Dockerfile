@@ -27,9 +27,8 @@ RUN apt install \
     libayatana-appindicator3-dev \
     librsvg2-dev -y
 
-# Back to go user
-USER go
-
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
-RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+# Add it to the PATH via forced installation
+RUN install /root/.cargo/bin /usr/bin
 
+USER go
