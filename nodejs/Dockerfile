@@ -1,3 +1,4 @@
+# Base image
 FROM gocd/gocd-agent-docker-dind:v23.1.0
 
 LABEL maintainer="Andrew Knackstedt <andrewk@vivaldi.net>"
